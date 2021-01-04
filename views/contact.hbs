@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Yuna the label</title>
+    <meta name="description" content="Yuna the Label, the Clothing Store Project by Jean Kang">
+    <meta name="author" content="Jean Kang">
+    <link rel="icon" type="image/png" href="../images/orange.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+  </head>
+
+  <body> 
+
+    <header>
+      <nav>
+        <div class="center">  
+          <ul>
+            <li>
+              <a href="index">
+                <img src="../images/orange.png" alt="" width=20 style="padding: 0% 0% 30% 0%">
+              </a>
+            </li>	
+            <li>
+              <a href="index" style="font-size:10pt; color: #ccc;">Home</a>  
+            </li>
+            <li>
+              <a href="2020SS" style="font-size:10pt; color: #ccc;">Collection</a> 
+            </li>
+            <li>
+              <a href="about" style="font-size:10pt; color: #ccc;">About</a>  
+            </li>
+            <li>
+              <a href="contact" style="font-size:10pt; color: #ccc;">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <form action="https://formspree.io/xbjzeboj" method="POST" style="display: flex; flex-direction: column; justify-content: left; padding-right: 20vw; padding-top: 3%; min-width:40%;"
+        id="contactForm" onsubmit="return submitContactForm()">
+
+    <div style="height: 50px"></div>
+
+    <label style="margin-right: 10px;" for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label style="margin-right: 10px;" for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label style="margin-right: 10px;" for="address">Address:</label>
+    <input type="text" id="address" name="address"><br><br>
+
+    <label style="margin-right: 10px;" for="city">City:</label>
+    <input list="cities" name="city" id="city">
+    <datalist id="cities">
+      <option value="Alberta">
+      <option value="British Columbia">
+      <option value="Manitoba">
+      <option value="New Brunswick">
+      <option value="Newfoundland and Labrador">
+      <option value="Nova Scotia">
+      <option value="Ontario">
+      <option value="Prince Edward Island">
+      <option value="Quebec">
+      <option value="Saskatchewan">
+      <option value="Northwest Territories">
+      <option value="Nunavut">
+      <option value="Yukon">
+    </datalist>
+
+    <br><br>
+
+    <label style="margin-right: 10px;" for="zipCode">Postal Code:</label>
+    <input type="text" id="zipCode" name="zipCode"><br>
+
+    <div>
+      <input type="radio" id="question"
+      name="option" value="question" onclick="showHideOrderInput()">
+      
+      <label for="question">Question</label><br>
+
+      <input type="radio" id="comment"
+      name="option" value="comment" onclick="showHideOrderInput()">
+      <label for="comment">Comment</label><br>
+
+      <input type="radio" id="orderProblem"
+      name="option" value="orderProblem" onclick="showHideOrderInput()">
+
+      <label for="orderProblem">Order problem</label>
+    </div>
+    
+    <br><br>
+
+    <label style="margin-right: 10px; display: none;" for="orderNum" id="orderNumLabel">Order Number:</label>
+    <input style="display: none; margin-bottom: 30px;" type="number" id="orderNum" name="orderNum">
+
+    <label for="areaMsg">Message</label>
+    <textarea id="areaMsg" name="areaMsg" rows="4" cols="50"></textarea><br><br>
+
+    <input type="hidden" id="contactName" name="contactName" value="contactName">
+    <input style="margin-left: 20px;" type="submit" value="Submit">
+    </form>
+
+    <div style="height: 50px"></div>
+
+    <script>
+
+      //to show the order number input box when the radio option order problem is selected
+      function showHideOrderInput(){
+        if(document.getElementById('orderProblem').checked ==  true){
+            document.getElementById("orderNumLabel").style.display = "block";
+            document.getElementById("orderNum").style.display = "block";
+        }else{
+            document.getElementById("orderNumLabel").style.display = "none";
+            document.getElementById("orderNum").style.display = "none";
+        }
+      }
+
+      //to submit the form when the validation check is done
+      function submitContactForm(){
+        let checkRes = checkValidation();
+        if(checkRes){
+          alert("Submit success!");
+          return true;
+        }
+        return false;
+      }
+
+      //check if all data has been filled out, and all is properly formatted
+      function checkValidation(form){
+        var emailRegExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+        var postalRegExp = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
+        let valid = true;
+
+        if(!document.getElementById("name").value ||
+          !document.getElementById("email").value ||
+          !document.getElementById("city").value ||
+          !document.getElementById("zipCode").value ||
+          !document.getElementById("areaMsg").value) {
+            console.log("1111111111");
+            return false;
+            alert("Please fill out all the form");
+        }
+        
+        //to check if the email data is properly formatted
+        if(!emailRegExp.test(document.getElementById("email").value)) {
+          alert("Email must contain @ or .");
+          return false;
+        }
+
+        //to check if the zip code is properly formatted (Canadian)
+        if(!postalRegExp.test(document.getElementById("zipCode").value)) {
+          alert("Canada Zip Code is consist of 6 characters");
+          return false;
+        }
+
+        //to check if radio option is selected
+        if(!document.getElementById('question').checked && !document.getElementById('comment').checked && !document.getElementById('orderProblem').checked){
+            console.log("22222222222");
+            alert("Please choose one of the 3 options");
+            return false;
+        }
+
+        //to check if the order number is filled out
+        if(document.getElementById('orderProblem').checked == true && !document.getElementById('orderNum').value){
+            console.log("33333333333");
+            alert("Please enter the order number");
+            return false;
+        }
+        return true;
+      }
+      
+    </script>
+
+    <footer>
+      <nav>
+        <div class="footer">
+          <ul>
+            <li>
+              <a href="index">
+                <img src="../images/orange.png" alt="" width=20 style="padding: 0% 0% 30% 0%">
+              </a>
+            </li>	
+            <li>
+              <a href="stockists" style="font-size:10pt; color: #ccc;">Stockists</a>	
+            </li>
+            <li>
+              <a href="privacy" style="font-size:10pt; color: #ccc;">Privacy policy</a>
+            </li>
+            <li>
+              <a href="http://www.instagram.com/yunaineworld">
+                <img src="../images/instaicon.png" alt="@Yunathelabel" style="padding: 0% 0% 30% 0%">
+              </a>
+            </li>
+            <li id="subscribe">
+              <a href="subscribe" style="font-size:10pt; color: #ccc;">Subscribe</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br>
+      © 2020 Yuna the Label · Built by YUNA KANG
+      <br><br>
+    </footer>
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/functions.js"></script>
+  </body>
+</html>
