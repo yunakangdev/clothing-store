@@ -27,7 +27,7 @@
     "clean": "rimraf assignment assignment.pdf assignment.zip submission submission.zip",
     "check": "run-s eslint stylelint validate",
     "test": "npm run check",
-    "start": "npm run server"
+    "start": "node server.js"
   },
   "dependencies": {
     "bestzip": "^2.1.7",
