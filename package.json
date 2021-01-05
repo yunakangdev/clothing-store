@@ -52,5 +52,9 @@
   "main": ".eslintrc.js",
   "devDependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/yunakang/clothing-store.git"
+  }
 }
