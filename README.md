@@ -1,12 +1,12 @@
-## 📝 PROJECT
+## 📑 PROJECT
 
-My very first project for an imaginary clothing store
+A website that shows the brand's latest collection and stockists
 
 ####https://yuna-the-label.herokuapp.com/
 
 ---
 
-## PLAN
+## 📎 PLAN
 
 #### MENU
 
@@ -18,7 +18,7 @@ My very first project for an imaginary clothing store
 - [x] Privacy policy
 - [x] Subscribe
 
-#### ETC
+#### OTHERS
 
 - [x] Custom Logo
 - [x] Background Music
@@ -27,7 +27,7 @@ My very first project for an imaginary clothing store
 
 ---
 
-## ISSUE
+## 💡 ISSUE
 
 - [ ] 2020/01/05 : Change CSS for Contact / Subscribe Form
 
@@ -37,24 +37,25 @@ My very first project for an imaginary clothing store
 
 - [ ] 2020/01/05 : Change Privacy Policy
 
-- [ ] 2020/01/05 : Heroku error H10, H20, H81
+- [x] 2020/01/05 : Heroku error H10, H20, H81
 
   <!-- https://gist.github.com/randallreedjr/aa89e069371d07371882eea2df15fb4d -->
 
-1. H81: H81 - Blank app  
-   No code has been pushed to this application. To get rid of this message you need to do one deploy.  
-   git commit --allow-empty -m "empty commit"  
-   git push heroku master
-   git push heroku master -f (overwrite this empty deploy on the next push of master)
+1.  H81: H81 - Blank app  
+    No code has been pushed to this application. To get rid of this message you need to do one deploy.
 
-2. H10: port issue  
-   const port = process.env.PORT || 3000;
+         git commit --allow-empty -m "empty commit"
+         git push heroku master
+         git push heroku master -f (overwrite this empty deploy on the next push of master)
 
-3) H20:  
-   Heroku error code H20 indicates that the routing mesh enqueued a request for 75 seconds waiting for your app to boot
+2.  H10: port issue  
+    const port = process.env.PORT || 3000;
 
-   tools.heroku.support/limits/boot_timeout
+3)  H20:  
+    Heroku error code H20 indicates that the routing mesh enqueued a request for 75 seconds waiting for your app to boot
 
-   add "start": "node server.js" in package.json
+    tools.heroku.support/limits/boot_timeout
 
-   heroku restart
+    add "start": "node server.js" in package.json
+
+    heroku restart
