@@ -19,16 +19,16 @@ app.get("/home", (req, res) => {
   res.render("index", { layout: false });
 });
 
-app.get("/2020SS", (req, res) => {
-  res.render("2020SS", { layout: false });
+app.get("/2021SS", (req, res) => {
+  res.render("2021SS", { layout: false });
 });
 
-app.get("/bags", (req, res) => {
-  res.render("bags", { layout: false });
+app.get("/2021FW", (req, res) => {
+  res.render("2021FW", { layout: false });
 });
 
-app.get("/shoes", (req, res) => {
-  res.render("shoes", { layout: false });
+app.get("/2022SS", (req, res) => {
+  res.render("2022SS", { layout: false });
 });
 
 app.get("/about", (req, res) => {

@@ -41,38 +41,22 @@
 
     <section class="content">
       <h1>Yuna the label</h1>
-      <hr>Join our mail list!<br><br><br>
-
-      <form action="https://formspree.io/xbjzeboj" method="POST" style="display: flex; align-items: center; justify-content: center; margin-left: 10%; margin-right: 10%;"  
-      id="subscribeEmail" onsubmit="return subscribeEmail()">
-        <input type="text" id="email" name="email"><br><br>
-        <input style="margin-left: 20px;" type="submit" value="Subscribe">
-      </form>
-
-      <script>
-        function subscribeEmail () {  
-          return valid = validation();
-          return valid;
-        }
-          
-        function validation () {
-          var regExpEm = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-          var email = document.getElementById("email").value;
-      
-          if(!email) {
-            alert("Please enter your email");
-            return false;
-          }
-      
-          if(!regExpEm.test(email)) {
-            alert("Please type your email address");
-            return false;
-          }
-          return true;
-        }
-      </script>
       <hr>
-      <br>
+      <div class="side_menu">
+        <ul>	
+          <li>
+            <a href="2021SS" style="font-family: Minion Pro; font-size:12pt; color: #343434;">2021 S/S</a>
+          </li>
+          <li>
+            <a href="2021FW" style="font-family: Minion Pro; font-size:12pt; color: #343434;">2021 F/W</a>
+          </li>
+          <li>
+            <a href="2022SS" style="font-family: Minion Pro; font-size:12pt; color: #e7591b">2022 S/S</a>
+          </li>
+        </ul>
+      </div>
+      <hr>Coming soon<hr>
+      <div style="height: 300px"></div>
     </section>
 
     <footer>
@@ -100,7 +84,7 @@
       © 2020 Yuna the Label · Built by YUNA KANG
       <br><br>
     </footer>
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/functions.js"></script>
+    <script src="./js/jquery-2.1.3.min.js"></script>
+    <script src="./js/functions.js"></script>
   </body>
 </html>

@@ -13,7 +13,6 @@
   </head>
 
   <body> 
-
     <header>
       <nav>
         <div class="center">  
@@ -27,7 +26,7 @@
               <a href="index" style="font-size:10pt; color: #ccc;">Home</a>  
             </li>
             <li>
-              <a href="2020SS" style="font-size:10pt; color: #ccc;">Collection</a> 
+              <a href="2021SS" style="font-size:10pt; color: #ccc;">Collection</a> 
             </li>
             <li>
               <a href="about" style="font-size:10pt; color: #ccc;">About</a>  
@@ -42,7 +41,6 @@
 
     <form action="https://formspree.io/xbjzeboj" method="POST" style="display: flex; flex-direction: column; justify-content: left; padding-right: 20vw; padding-top: 3%; min-width:40%;"
         id="contactForm" onsubmit="return submitContactForm()">
-
     <div style="height: 50px"></div>
 
     <label style="margin-right: 10px;" for="name">Name:</label>
@@ -55,7 +53,7 @@
     <input type="text" id="address" name="address"><br><br>
 
     <label style="margin-right: 10px;" for="city">City:</label>
-    <input list="cities" name="city" id="city">
+    <input list="cities" name="city" id="city" style="height: 38px; border: 1px #d1d1d1 solid; border-radius: 4px;">
     <datalist id="cities">
       <option value="Alberta">
       <option value="British Columbia">
@@ -77,20 +75,24 @@
     <label style="margin-right: 10px;" for="zipCode">Postal Code:</label>
     <input type="text" id="zipCode" name="zipCode"><br>
 
-    <div>
-      <input type="radio" id="question"
-      name="option" value="question" onclick="showHideOrderInput()">
-      
-      <label for="question">Question</label><br>
+    <div style="margin-top: 16px;">
+      <span style="display: flex;">
+        <input type="radio" id="question"
+        name="option" value="question" onclick="showHideOrderInput()" style="margin-right: 10px;">
+        <label for="question">Product inquiry</label><br>
+      </span>
 
-      <input type="radio" id="comment"
-      name="option" value="comment" onclick="showHideOrderInput()">
-      <label for="comment">Comment</label><br>
+      <span style="display: flex;">
+        <input type="radio" id="comment"
+        name="option" value="comment" onclick="showHideOrderInput()" style="margin-right: 10px;">
+        <label for="comment">Technical Support</label><br>
+      </span>
 
-      <input type="radio" id="orderProblem"
-      name="option" value="orderProblem" onclick="showHideOrderInput()">
-
-      <label for="orderProblem">Order problem</label>
+      <span style="display: flex;">
+        <input type="radio" id="orderProblem"
+        name="option" value="orderProblem" onclick="showHideOrderInput()" style="margin-right: 10px;">
+        <label for="orderProblem">Order problem</label>
+      </span>
     </div>
     
     <br><br>
@@ -102,14 +104,12 @@
     <textarea id="areaMsg" name="areaMsg" rows="4" cols="50"></textarea><br><br>
 
     <input type="hidden" id="contactName" name="contactName" value="contactName">
-    <input style="margin-left: 20px;" type="submit" value="Submit">
+    <input type="submit" value="Submit">
     </form>
 
-    <div style="height: 50px"></div>
+    <div style="height: 50px; width: 50%;"></div>
 
     <script>
-
-      //to show the order number input box when the radio option order problem is selected
       function showHideOrderInput(){
         if(document.getElementById('orderProblem').checked ==  true){
             document.getElementById("orderNumLabel").style.display = "block";
@@ -120,7 +120,6 @@
         }
       }
 
-      //to submit the form when the validation check is done
       function submitContactForm(){
         let checkRes = checkValidation();
         if(checkRes){
@@ -130,7 +129,6 @@
         return false;
       }
 
-      //check if all data has been filled out, and all is properly formatted
       function checkValidation(form){
         var emailRegExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
         var postalRegExp = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
@@ -146,26 +144,22 @@
             alert("Please fill out all the form");
         }
         
-        //to check if the email data is properly formatted
         if(!emailRegExp.test(document.getElementById("email").value)) {
           alert("Email must contain @ or .");
           return false;
         }
 
-        //to check if the zip code is properly formatted (Canadian)
         if(!postalRegExp.test(document.getElementById("zipCode").value)) {
           alert("Canada Zip Code is consist of 6 characters");
           return false;
         }
 
-        //to check if radio option is selected
         if(!document.getElementById('question').checked && !document.getElementById('comment').checked && !document.getElementById('orderProblem').checked){
             console.log("22222222222");
             alert("Please choose one of the 3 options");
             return false;
         }
 
-        //to check if the order number is filled out
         if(document.getElementById('orderProblem').checked == true && !document.getElementById('orderNum').value){
             console.log("33333333333");
             alert("Please enter the order number");
@@ -173,7 +167,6 @@
         }
         return true;
       }
-      
     </script>
 
     <footer>
@@ -188,9 +181,9 @@
             <li>
               <a href="stockists" style="font-size:10pt; color: #ccc;">Stockists</a>	
             </li>
-            <li>
-              <a href="privacy" style="font-size:10pt; color: #ccc;">Privacy policy</a>
-            </li>
+            {{!-- <li>
+              <a href="privacy" style="font-size:10pt; color: #ccc;">Privacy Policy</a>
+            </li> --}}
             <li id="subscribe">
               <a href="subscribe" style="font-size:10pt; color: #ccc;">Subscribe</a>
             </li>
