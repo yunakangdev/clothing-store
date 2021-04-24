@@ -139,7 +139,6 @@
           !document.getElementById("city").value ||
           !document.getElementById("zipCode").value ||
           !document.getElementById("areaMsg").value) {
-            console.log("1111111111");
             return false;
             alert("Please fill out all the form");
         }
@@ -155,13 +154,11 @@
         }
 
         if(!document.getElementById('question').checked && !document.getElementById('comment').checked && !document.getElementById('orderProblem').checked){
-            console.log("22222222222");
             alert("Please choose one of the 3 options");
             return false;
         }
 
         if(document.getElementById('orderProblem').checked == true && !document.getElementById('orderNum').value){
-            console.log("33333333333");
             alert("Please enter the order number");
             return false;
         }
@@ -181,9 +178,6 @@
             <li>
               <a href="stockists" style="font-size:10pt; color: #ccc;">Stockists</a>	
             </li>
-            {{!-- <li>
-              <a href="privacy" style="font-size:10pt; color: #ccc;">Privacy Policy</a>
-            </li> --}}
             <li id="subscribe">
               <a href="subscribe" style="font-size:10pt; color: #ccc;">Subscribe</a>
             </li>
