@@ -35,7 +35,7 @@ A website that shows the brand's latest collection and stockists
 
 - [ ] 2020/01/05 : Apply BEM
 
-- [ ] 2020/01/05 : Change Privacy Policy
+- [x] 2020/01/05 : Change Privacy Policy
 
 - [x] 2020/01/05 : Heroku error H10, H20, H81
 
