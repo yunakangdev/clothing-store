@@ -27,10 +27,6 @@ app.get("/2021FW", (req, res) => {
   res.render("2021FW", { layout: false });
 });
 
-app.get("/2022SS", (req, res) => {
-  res.render("2022SS", { layout: false });
-});
-
 app.get("/about", (req, res) => {
   res.render("about", { layout: false });
 });

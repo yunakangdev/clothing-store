@@ -775,8 +775,14 @@ body {
 
 h1 {
   color: #ccc;
-  weight: 300;
+  font-weight: 300;
   padding-bottom: 55px;
+}
+
+h4 {
+  color: #ccc;
+  font-weight: 300;
+  padding-bottom: 10px;
 }
 
 figure {
@@ -939,3 +945,21 @@ footer {
   float: right;
   padding-right: 1%;
 }
+
+.interests__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.interest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: yellow;
+}
+
+@
