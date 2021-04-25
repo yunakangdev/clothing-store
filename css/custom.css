@@ -1,0 +1,238 @@
+/* Typography */
+h1 {
+  color: #ccc;
+  font-weight: 300;
+  padding-bottom: 55px;
+}
+
+h4 {
+  color: #ccc;
+  font-weight: 300;
+  padding-bottom: 10px;
+}
+
+/* Common */
+.content {
+  padding: 100px 0;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  color: #343434;
+}
+
+label {
+  font-size: 12px;
+  font: Tahoma, sans-serif;
+  color: #343434;
+}
+
+.caption {
+  font-family: "Minion Pro", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.5em;
+  color: #343434;
+}
+
+.lower {
+  font-family: "Minion Pro", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  color: #343434;
+}
+
+/* Nav */
+nav {
+  height: 40px;
+  background: #343434;
+  border: #343434 solid 1px;
+}
+
+nav:hover {
+  cursor: url(../images/orange2.png), url(../images/orange2.png), auto;
+}
+
+nav ul {
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 0 0 0 0px;
+  padding: 0px;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  padding: 12px 12px 12px 12px;
+  display: block;
+  line-height: 40px;
+  font: 95% Tahoma, sans-serif;
+  color: #ddd;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  cursor: url(../images/orange2.png), url(../images/orange2.png), auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+}
+
+footer img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Main */
+.main__container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/pool.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main__image {
+  width: 300px;
+  height: 115vh;
+  background-image: url(../images/skndip.png);
+  background-size: 105%;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 4%;
+  top: 45%;
+}
+
+.logo {
+  width: 351px;
+  height: 85px;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 40%;
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+}
+
+/* About */
+.about img {
+  width: 400px;
+}
+
+.about p {
+  width: 100%;
+  font-size: 16px;
+  color: #343434;
+}
+
+.interests__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.interest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: yellow;
+}
+
+/* Collection */
+.side_menu ul li {
+  padding: 12px 12px 12px 12px;
+  display: block;
+  float: center;
+}
+
+.side_menu a {
+  text-decoration: none;
+}
+
+figure {
+  margin: auto;
+}
+
+.pics {
+  margin-top: 20px;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.pics img {
+  height: 40vh;
+}
+
+.pics figure {
+  position: relative;
+  opacity: 0;
+  transition: all 0.75s ease-in-out;
+}
+
+.pics figure.is-showing {
+  opacity: 1;
+}
+
+.pics .row:nth-child(1) .columns:nth-child(1) img {
+  position: relative;
+  padding-top: -3%;
+}
+
+.pics .row:nth-child(1) .columns:nth-child(2) img {
+  position: relative;
+  padding-top: -15%;
+  padding-right: -4%;
+}
+
+.pics .row:nth-child(1) .columns:nth-child(3) img {
+  position: relative;
+  padding-right: -10%;
+}
+
+.pics .row:nth-child(2) .columns:nth-child(1) img {
+  position: relative;
+  padding-top: -4%;
+  padding-right: -25%;
+}
+
+.pics .row:nth-child(2) .columns:nth-child(2) img {
+  position: relative;
+  padding-left: -10%;
+}
+
+.pics .row:nth-child(3) .columns:nth-child(1) img {
+  position: relative;
+}
+
+.pics .row:nth-child(3) .columns:nth-child(2) img {
+  position: relative;
+  padding-bottom: -80%;
+  padding-right: -8%;
+}
+
+.pics .row:nth-child(3) .columns:nth-child(3) img {
+  position: relative;
+  padding-top: -6%;
+  padding-right: -5%;
+}
+.pics .row:nth-child(3) .columns:nth-child(3) img:hover {
+  cursor: url(../images/orange2.png), url(../images/orange2.png), auto;
+}
+
+/* Subscribe */
+#subscribe {
+  float: right;
+  padding-right: 1%;
+}
