@@ -794,6 +794,8 @@ figure {
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
+  font-size: 16px;
+  color: #343434;
 }
 
 footer img {
