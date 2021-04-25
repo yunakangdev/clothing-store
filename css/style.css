@@ -791,7 +791,7 @@ figure {
 
 .content {
   padding: 100px 0;
-  max-width: 640px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: center;
 }
@@ -803,6 +803,12 @@ footer img {
 
 .about img {
   width: 400px;
+}
+
+.about p {
+  width: 100%;
+  font-size: 16px;
+  font-color: #343434;
 }
 
 .pics img {
